@@ -1,0 +1,90 @@
+.row-item {
+  width: 100%;
+  height: 30rem;
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.image-wrapper {
+  height: 100%;
+  width: 30rem; /* or adjust based on layout */
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.slanted-overlay {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%); /* Default slant (right side) */
+}
+
+.main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.text-content {
+  padding: 1rem;
+  max-width: 400px;
+}
+
+.text-content h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.text-content p {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* Fade-in transition */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Expanded full-screen state */
+.row-item.expanded {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  background: white;
+  display: block;
+  padding: 2rem;
+  overflow-y: auto;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.expanded-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.expanded-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.expanded-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
