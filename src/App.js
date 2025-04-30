@@ -1,39 +1,92 @@
-import imagePath from './images/image.png';
-import './App.css';
+import { useEffect, useState, useRef } from 'react';
 import RowItem from './components/RowItem';
+import './App.css'; // ← new CSS file
 
-function App() {
-  const rows = [
-    {
-      name: 'Helip',
-      text: 'An easy to use and beautiful location application.',
-      longText: 'This is a long description of the Helip app. It helps you navigate and find locations easily.',
-      image: imagePath,
-    },
-    {
-      name: "Project Two",
-      text: "Another project description.",
-      longText: "This is a long description of Project Two. It's a feature-rich project with many possibilities.",
-      image: imagePath,
-    }
-  ];
+import CV_IMG from './images/CV_IMG.jpg'
+import Helip_intro from './images/Helip_intro.png'
+
+const App = () => {
+  const [activeSection, setActiveSection] = useState('home');
+  const homeRef = useRef(null);
+  const projectsRef = useRef(null);
+  const projects = [{
+    name: 'Helip',
+    text: 'An easy to use and beautiful location application.',
+    longText: 'This is a long description of the Helip app. It helps you navigate and find locations easily.',
+    image: Helip_intro,
+  },
+  {
+    name: "Project Two",
+    text: "Another project description.",
+    longText: "This is a long description of Project Two. It's a feature-rich project with many possibilities.",
+    image: Helip_intro,
+  }]
+
+  const handleScroll = () => {
+    const scrollY = window.scrollY;
+    const homeTop = homeRef.current.offsetTop;
+    const projectsTop = projectsRef.current.offsetTop;
+
+    const currentSection = scrollY >= projectsTop - 200 ? 'projects' : 'home';
+    setActiveSection(currentSection);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollTo = (ref) => ref.current.scrollIntoView({ behavior: 'smooth' });
 
   return (
-    <div className="App">
-      <div className='fill'></div>
-      {rows.map((row, index) => (
-        <RowItem
-          key={index}
-          index={index}
-          title={row.name}
-          shortDescription={row.text}
-          longDescription={row.longText}
-          imageSrc={row.image}
-        />
-      ))}
-      <div className='fill'></div>
+    <div className="portfolio-page">
+      {/* Navigation Bar */}
+      <nav className="navbar">
+        <button
+          onClick={() => scrollTo(homeRef)}
+          className={`nav-link ${activeSection === 'home' ? 'active' : ''}`}
+        >
+          Home
+        </button>
+        <button
+          onClick={() => scrollTo(projectsRef)}
+          className={`nav-link ${activeSection === 'projects' ? 'active' : ''}`}
+        >
+          Projects
+        </button>
+      </nav>
+
+      {/* Home Section */}
+      <section ref={homeRef} className="section home-section">
+        <div className="home-content">
+          <h1>Hi, I'm Tuukka Heinonen</h1>
+          <p>
+            Full-stack developer specialized in React and databases. Passionate about problem-solving,
+            mentoring, and continuous learning. Currently finishing my BBA in Software Development at
+            Haaga-Helia University with a strong academic track record and a submitted React Native thesis.
+          </p>
+          <img src={CV_IMG} alt="Profile pic"></img>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section ref={projectsRef} className="section projects-section">
+        <h2 className="section-title">Projects</h2>
+        <div className="projects-list">
+          {projects.map((project, i) => (
+            <RowItem
+              key={i}
+              index={i}
+              imageSrc={project.image}
+              title={`Project ${project.text}`}
+              shortDescription={`Project ${project.text}`}
+              longDescription={`Project ${project.longText}`}
+            />
+          ))}
+        </div>
+      </section>
     </div>
   );
-}
+};
 
 export default App;
