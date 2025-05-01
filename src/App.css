@@ -42,7 +42,6 @@ body, html {
   
   /* Sections */
   .section {
-    min-height: 100vh;
     padding: 2rem 1rem;
   }
   
@@ -52,6 +51,7 @@ body, html {
     justify-content: center;
     background-color: #1a1a1a;
     text-align: center;
+    min-height: 100vh;
   }
   
   .home-content {
@@ -87,5 +87,24 @@ body, html {
     flex-direction: column;
     gap: 3rem;
     align-items: center;
+  }
+  
+  /* Contacts */
+  .contact-section {
+    background-color: #181818;
+    text-align: center;
+    padding: 4rem 1rem;
+  }
+  
+  .contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+    color: #ccc;
+    font-size: 1.1rem;
+  }
+  
+  .contact-content a {
+    color: #facc15;
+    text-decoration: underline;
   }
   

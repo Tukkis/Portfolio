@@ -1,6 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useInView } from 'react-intersection-observer';
-import FullscreenOverlay from './FullscreenOverlay';
 import './RowItem.css';
 
 const RowItem = ({ index, imageSrc, title, shortDescription, longDescription }) => {
@@ -8,7 +6,6 @@ const RowItem = ({ index, imageSrc, title, shortDescription, longDescription }) 
   const [isOpen, setIsOpen] = useState(false);
   const [opacity, setOpacity] = useState(1);
   const itemRef = useRef(null);
-  const [ref, inView] = useInView({ threshold: 0.2 });
 
   // Combine inView and custom ref
   useEffect(() => {
@@ -34,28 +31,19 @@ const RowItem = ({ index, imageSrc, title, shortDescription, longDescription }) 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Auto close overlay if out of view
-  useEffect(() => {
-    if (!inView && isOpen) {
-      setIsOpen(false);
-    }
-  }, [inView, isOpen]);
-
   return (
     <>
       <div
         ref={(el) => {
-          ref(el); // For useInView
-          itemRef.current = el; // For scroll tracking
+          itemRef.current = el; 
         }}
-        className="row-item"
+        className={`row-item ${isOpen ? 'expanded-row' : ''}`}
         style={{
-          display: 'flex',
           flexDirection: isEven ? 'row' : 'row-reverse',
           opacity,
-          transition: 'opacity 0.3s ease',
+          transition: 'opacity 0.3s ease, height 0.4s ease',
         }}
-        onClick={() => setIsOpen(true)}
+        onClick={() => setIsOpen(!isOpen)}
       >
         <div className="image-wrapper">
           <div
@@ -71,17 +59,9 @@ const RowItem = ({ index, imageSrc, title, shortDescription, longDescription }) 
         </div>
         <div className="text-content">
           <h3>{title}</h3>
-          <p>{shortDescription}</p>
+          <p>{isOpen ? longDescription : shortDescription}</p>
         </div>
       </div>
-
-      {isOpen && (
-        <FullscreenOverlay
-          title={title}
-          longDescription={longDescription}
-          onClose={() => setIsOpen(false)}
-        />
-      )}
     </>
   );
 };

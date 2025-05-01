@@ -9,6 +9,7 @@ const App = () => {
   const [activeSection, setActiveSection] = useState('home');
   const homeRef = useRef(null);
   const projectsRef = useRef(null);
+  const contactRef = useRef(null);
   const projects = [{
     name: 'Helip',
     text: 'An easy to use and beautiful location application.',
@@ -24,10 +25,16 @@ const App = () => {
 
   const handleScroll = () => {
     const scrollY = window.scrollY;
-    const homeTop = homeRef.current.offsetTop;
+    /* const homeTop = homeRef.current.offsetTop; */
     const projectsTop = projectsRef.current.offsetTop;
+    const contactTop = contactRef.current.offsetTop;
 
-    const currentSection = scrollY >= projectsTop - 200 ? 'projects' : 'home';
+    const currentSection =
+      scrollY >= contactTop - 200
+        ? 'contact'
+        : scrollY >= projectsTop - 200
+        ? 'projects'
+        : 'home';
     setActiveSection(currentSection);
   };
 
@@ -54,6 +61,12 @@ const App = () => {
         >
           Projects
         </button>
+        <button
+          onClick={() => scrollTo(contactRef)}
+          className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`}
+        >
+          Contact
+        </button>
       </nav>
 
       {/* Home Section */}
@@ -78,11 +91,21 @@ const App = () => {
               key={i}
               index={i}
               imageSrc={project.image}
-              title={`Project ${project.text}`}
-              shortDescription={`Project ${project.text}`}
-              longDescription={`Project ${project.longText}`}
+              title={project.name}
+              shortDescription={project.text}
+              longDescription={project.longText}
             />
           ))}
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section ref={contactRef} className="section contact-section">
+        <h2 className="section-title">Contact</h2>
+        <div className="contact-content">
+          <p>You can reach me at:</p>
+          <p><strong>Email:</strong> <a href="mailto:Tukkis96@outlook.com">Tukkis96@outlook.com</a></p>
+          <p><strong>GitHub:</strong> <a href="https://github.com/Tukkis" target="_blank" rel="noopener noreferrer">github.com/Tukkis</a></p>
         </div>
       </section>
     </div>
