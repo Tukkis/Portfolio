@@ -4,13 +4,26 @@ import './App.css'; // ← new CSS file
 
 import CV_IMG from './images/CV_IMG.jpg'
 import Helip_intro from './images/Helip_intro.png'
+import NutriTracker_intro from './images/NutriTracker_intro.png'
 
 const App = () => {
   const [activeSection, setActiveSection] = useState('home');
   const homeRef = useRef(null);
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
-  const projects = [{
+  const projects = [
+  {
+    name: "NutriTracker",
+    text: "A mobile app for planning and tracking nutrition using gamification.",
+    longText: `The goal of this thesis was to develop an easy-to-use mobile application that helps users track and plan their diets through gamified elements. 
+      The project also aimed to document every step of the software development process, from requirement specification to publication, to serve as a portfolio piece and a guide for others. 
+      The development lifecycle included requirement analysis, design, implementation, testing, and release. An iterative, agile development model was applied. 
+      The requirements were gathered using brainstorming and resulted in a use case diagram. The design was visualized through wireframes and task management using a Kanban board. 
+      The application was built with React Native, using the Expo environment and Firestore database. Testing was conducted with Jest and React Testing Library. 
+      A closed test version was published to the Google Play Store. The thesis also reviewed alternative methods and tools, and decisions were based on commonly accepted practices and recommendations from documentation and the developer community.`,
+    image: NutriTracker_intro,
+  },
+  {
     name: 'Helip',
     text: 'An easy to use and beautiful location application.',
     longText: 'This is a long description of the Helip app. It helps you navigate and find locations easily.',
