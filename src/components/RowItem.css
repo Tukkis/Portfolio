@@ -1,6 +1,6 @@
 .row-item {
   width: 100%;
-  height: 30rem;
+  height: 20rem;
   margin: 2rem 0;
   display: flex;
   align-items: center;
@@ -8,7 +8,7 @@
 
 .image-wrapper {
   height: 100%;
-  width: 30rem; /* or adjust based on layout */
+  width: 30rem;
   flex-shrink: 0;
   position: relative;
   overflow: hidden;
@@ -18,7 +18,7 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%); /* Default slant (right side) */
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
 }
 
 .main-image {
@@ -42,7 +42,7 @@
 .text-content p {
   margin: 0.5rem 0 0 0;
   font-size: 0.95rem;
-  color: #444;
+  color: #555;
 }
 
 /* Fade-in transition */
@@ -62,7 +62,7 @@
 }
 
 .expanded-row {
-  height: 60rem; /* 2x the normal 30rem */
+  height: 60rem;
   width: 100%;
 }
 
@@ -76,4 +76,70 @@
 h3 {
   margin-left: auto;
   margin-right: auto;
+}
+
+.feature-list {
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+  list-style-type: none;
+  color: #555;
+}
+
+.feature-list li {
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+}
+
+.tech-stack {
+  margin-top: 1rem;
+}
+
+.tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.tech-badge {
+  background-color: #eef2f7;
+  color: #333;
+  padding: 0.3rem 0.6rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 768px) {
+  .row-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .image-wrapper {
+    width: 100%;
+    height: 200px;
+  }
+
+  .text-content {
+    padding: 1rem;
+    max-width: 90%;
+  }
+
+  .image-wrapper {
+    width: 100%;
+    height: 200px; /* Or auto, or scale based on aspect ratio */
+  }
+
+  .main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* maintain crop/fill behavior */
+  }
+
+  .slanted-overlay {
+    clip-path: none; /* Remove slant effect on mobile if it breaks layout */
+  }
 }

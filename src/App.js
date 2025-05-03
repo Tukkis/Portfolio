@@ -15,26 +15,54 @@ const App = () => {
   {
     name: "NutriTracker",
     text: "A mobile app for planning and tracking nutrition using gamification.",
-    longText: `The goal of this thesis was to develop an easy-to-use mobile application that helps users track and plan their diets through gamified elements. 
-      The project also aimed to document every step of the software development process, from requirement specification to publication, to serve as a portfolio piece and a guide for others. 
-      The development lifecycle included requirement analysis, design, implementation, testing, and release. An iterative, agile development model was applied. 
-      The requirements were gathered using brainstorming and resulted in a use case diagram. The design was visualized through wireframes and task management using a Kanban board. 
-      The application was built with React Native, using the Expo environment and Firestore database. Testing was conducted with Jest and React Testing Library. 
-      A closed test version was published to the Google Play Store. The thesis also reviewed alternative methods and tools, and decisions were based on commonly accepted practices and recommendations from documentation and the developer community.`,
+    longText:"NutriTracker is a mobile app that helps users plan and track their nutrition through simple tools and gamified challenges. The goal is to make healthy eating easier, more engaging, and rewarding.",
+    features: [
+      "Personalized nutrition plans",
+      "Meal logging with progress tracking",
+      "Gamified challenges tied to goals",
+      "Cloud data storage with Firestore",
+      "Tested for stability with Jest and RTL"
+    ],
+    technologies: [
+      "React Native",
+      "Expo",
+      "Firestore",
+      "Jest",
+      "React Testing Library",
+      "Agile Development",
+      "Kanban"
+    ],
     image: NutriTracker_intro,
   },
   {
-    name: 'Helip',
-    text: 'An easy to use and beautiful location application.',
-    longText: 'This is a long description of the Helip app. It helps you navigate and find locations easily.',
-    image: Helip_intro,
-  },
-  {
-    name: "Project Two",
-    text: "Another project description.",
-    longText: "This is a long description of Project Two. It's a feature-rich project with many possibilities.",
-    image: Helip_intro,
-  }]
+    name: "Helip",
+    text: "A mobile app that helps users find and explore sports facilities across Finland.",
+    longText: "Helip is a mobile application that gives users a comprehensive view of sports facilities in Finland. It makes finding local exercise opportunities easier by integrating up-to-date data and offering user-friendly navigation and community-driven event features.",
+    features: [
+      "Comprehensive nationwide sports facility data from Lipas.fi",
+      "Search and explore gyms, fields, swimming pools, and more",
+      "Create and organize events at sports venues",
+      "Location-aware suggestions based on user proximity",
+      "User-friendly and intuitive interface for quick access to info",
+      "Support for both Android and iOS platforms"
+    ],
+    technologies: [
+      "React Native",
+      "React",
+      "Expo",
+      "Firebase",
+      "Lipas.fi API",
+      "React Navigation",
+      "AsyncStorage",
+      "Gorhom Bottom Sheet",
+      "React Native Elements",
+      "React Native Paper",
+      "React Native Maps",
+      "Community Datetime Picker"
+    ],
+    image: Helip_intro, 
+  }
+]
 
   const handleScroll = () => {
     const scrollY = window.scrollY;
@@ -107,6 +135,8 @@ const App = () => {
               title={project.name}
               shortDescription={project.text}
               longDescription={project.longText}
+              features={project.features}
+              technologies={project.technologies}
             />
           ))}
         </div>
