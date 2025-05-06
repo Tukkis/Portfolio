@@ -64,7 +64,23 @@ const App = () => {
         "CLI Development", "DevOps", "MLOps", "CI/CD", "GitHub Actions", "Python", "Shell Scripting", "Automation", "Linux"
       ],
       image: null // Add image if available
-    },    
+    },
+    {
+      name: "C++ CMS",
+      text: "A general-purpose content management system built in C++.",
+      longText: "This project is a fully-fledged CMS built using C++. It allows for content management, user authentication, and dynamic page rendering. The system is designed to be extensible and easily customizable for various content-driven websites.",
+      features: [
+        "Content management with an intuitive interface",
+        "User authentication and role management",
+        "Customizable templates for dynamic pages",
+        "RESTful API support for external integrations",
+        "Plugin architecture for extensibility"
+      ],
+      keywords: [
+        "C++", "CMS", "Backend Development", "REST API", "Database Integration", "Plugin Architecture", "System Design", "Performance Optimization"
+      ],
+      image: null // Replace with an image if you have one
+    }
   ];
 
   const allKeywords = Array.from(new Set(projects.flatMap(p => p.keywords)));
