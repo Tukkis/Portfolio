@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './RowItem.css';
 
-const RowItem = ({ index, imageSrc, title, shortDescription, longDescription, features, technologies }) => {
+const RowItem = ({ index, imageSrc, title, shortDescription, longDescription, features, keywords }) => {
   const isEven = index % 2 === 0;
   const [isOpen, setIsOpen] = useState(false);
   const [opacity, setOpacity] = useState(1);
@@ -67,12 +67,12 @@ const RowItem = ({ index, imageSrc, title, shortDescription, longDescription, fe
               ))}
             </ul>
           )}
-          {isOpen && technologies?.length > 0 && (
+          {isOpen && keywords?.length > 0 && (
             <div className="tech-stack">
-              <h4>Technologies Used:</h4>
+              <h4>Keywords:</h4>
               <div className="tech-badges">
-                {technologies.map((tech, idx) => (
-                  <span key={idx} className="tech-badge">{tech}</span>
+                {keywords.map((keyword, idx) => (
+                  <span key={idx} className="tech-badge">{keyword}</span>
                 ))}
               </div>
             </div>

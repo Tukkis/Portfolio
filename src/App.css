@@ -1,110 +1,140 @@
+/* Base styles */
 body, html {
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
-    font-family: Arial, sans-serif;
-    background-color: #111;
-    color: #fff;
-  }
-  
-  .portfolio-page {
-    padding-top: 60px;
-  }
-  
-  /* Navbar */
-  .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #222;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    padding: 1rem 0;
-    z-index: 1000;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-  }
-  
-  .nav-link {
-    color: #ccc;
-    font-size: 1rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem 1rem;
-    transition: color 0.3s;
-  }
-  
-  .nav-link:hover,
-  .nav-link.active {
-    color: #facc15; /* yellow */
-  }
-  
-  /* Sections */
-  .section {
-    padding: 2rem 1rem;
-  }
-  
-  .home-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #1a1a1a;
-    text-align: center;
-    min-height: 100vh;
-  }
-  
-  .home-content {
-    max-width: 700px;
-  }
-  
-  .home-content h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .cv-link {
-    display: inline-block;
-    margin-top: 1.5rem;
-    color: #facc15;
-    text-decoration: underline;
-    font-size: 0.95rem;
-  }
-  
-  /* Projects */
-  .projects-section {
-    background-color: #0e0e0e;
-  }
-  
-  .section-title {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
-  
-  .projects-list {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    align-items: center;
-  }
-  
-  /* Contacts */
-  .contact-section {
-    background-color: #181818;
-    text-align: center;
-    padding: 4rem 1rem;
-  }
-  
-  .contact-content {
-    max-width: 600px;
-    margin: 0 auto;
-    color: #ccc;
-    font-size: 1.1rem;
-  }
-  
-  .contact-content a {
-    color: #facc15;
-    text-decoration: underline;
-  }
-  
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  color: #fff;
+}
+
+.portfolio-page {
+  padding-top: 60px;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #222;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.nav-link {
+  color: #ccc;
+  font-size: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #facc15; /* yellow */
+}
+
+/* Section */
+.section {
+  padding: 2rem 1rem;
+}
+
+/* Home */
+.home-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a1a1a;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.home-content {
+  max-width: 700px;
+}
+
+.home-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.home-content img {
+  margin-top: 2rem;
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* Projects */
+.projects-section {
+  background-color: #0e0e0e;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+/* Filter Bar */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0 1rem;
+}
+
+.filter-button {
+  padding: 0.4rem 0.9rem;
+  font-size: 0.9rem;
+  background-color: #222;
+  color: #ccc;
+  border: 1px solid #333;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.filter-button:hover {
+  background-color: #333;
+}
+
+.filter-button.active {
+  background-color: #facc15;
+  color: #000;
+  font-weight: bold;
+}
+
+/* Contact */
+.contact-section {
+  background-color: #181818;
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.contact-content {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #ccc;
+  font-size: 1.1rem;
+}
+
+.contact-content a {
+  color: #facc15;
+  text-decoration: underline;
+}
