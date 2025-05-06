@@ -20,7 +20,7 @@ const RowItem = ({ index, imageSrc, title, shortDescription, longDescription, fe
       const distanceFromCenter = Math.abs(centerY - rowY);
 
       if (distanceFromCenter > windowHeight * 0.27) {
-        setOpacity(0.7);
+        setOpacity(0.2);
       } else {
         setOpacity(1);
       }
