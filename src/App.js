@@ -6,7 +6,9 @@ import ContactSection from './components/ContactSection';
 
 import './App.css';
 
+import CLI_intro from './images/CLI_intro.png';
 import Helip_intro from './images/Helip_intro.png';
+import Libary_intro from './images/Library_intro.png';
 import NutriTracker_intro from './images/NutriTracker_intro.png';
 
 const App = () => {
@@ -30,9 +32,9 @@ const App = () => {
         "Tested for stability with Jest and RTL"
       ],
       keywords: [
-        "React Native", "Mobile Development", "CI/CD", "Cloud Firestore", "Automated Testing", "Agile", "Kanban"
+        "React Native", "Mobile Development", "Firebase", "CI/CD", "Automated Testing", "Algorithms"
       ],
-      image: NutriTracker_intro,
+      image: NutriTracker_intro
     },
     {
       name: "Helip",
@@ -45,14 +47,14 @@ const App = () => {
         "iOS & Android support"
       ],
       keywords: [
-        "React Native", "API Integration", "Firebase", "Mobile UI/UX", "Geolocation", "Cross-Platform Development", "Agile"
+        "React Native", "Mobile Development", "Firebase", "Geolocation", "API Integration"  
       ],
-      image: Helip_intro,
+      image: Helip_intro
     },
     {
       name: "CLI Tool for GitHub Repo Management",
       text: "CLI tool that automates GitHub repo setup, forking, and configuration for MLOps use cases.",
-      longText: "This tool automates the creation, configuration, and management of GitHub repositories tailored for MLOps workflows. It includes a repository setup module for initializing branches and secrets, and a forking module for duplicating and customizing repos under different organizations. It supports automation using GitHub CLI and GitHub Actions, with some manual steps involving environment and runner setup.",
+      longText: "This tool automates the creation, configuration, and management of GitHub repositories tailored for MLOps workflows...",
       features: [
         "Automated repo creation with development/staging/production branches",
         "Forking existing repos under a custom organization name",
@@ -61,14 +63,14 @@ const App = () => {
         "Instructions for both local and remote environment setups"
       ],
       keywords: [
-        "CLI Development", "DevOps", "MLOps", "CI/CD", "GitHub Actions", "Python", "Shell Scripting", "Automation", "Linux"
+        "CLI", "DevOps", "MLOps", "CI/CD", "GitHub Actions", "Python", "Shell Scripting", "Automation", "Linux"
       ],
-      image: null // Add image if available
+      image: CLI_intro
     },
     {
       name: "C++ CMS",
       text: "A general-purpose content management system built in C++.",
-      longText: "This project is a fully-fledged CMS built using C++. It allows for content management, user authentication, and dynamic page rendering. The system is designed to be extensible and easily customizable for various content-driven websites.",
+      longText: "This project is a fully-fledged CMS built using C++. It allows for content management, user authentication, and dynamic page rendering...",
       features: [
         "Content management with an intuitive interface",
         "User authentication and role management",
@@ -77,13 +79,64 @@ const App = () => {
         "Plugin architecture for extensibility"
       ],
       keywords: [
-        "C++", "CMS", "Backend Development", "REST API", "Database Integration", "Plugin Architecture", "System Design", "Performance Optimization"
+        "C++", "CMS", "Backend Development", "REST API", "Database Integration", "System Design", "Performance Optimization"
       ],
-      image: null // Replace with an image if you have one
+      image: null
+    },
+    {
+      name: "Java Library App",
+      text: "A library management application built with Java featuring CRUD operations for books, users, and genres.",
+      longText: "This Java-based application is designed to manage a library system...",
+      features: [
+        "CRUD functionality for books, users, and genres",
+        "Thymeleaf-based user interface for managing data",
+        "RESTful API endpoints for external interaction",
+        "Spring Boot framework for rapid development",
+        "Relational database integration (e.g., H2, PostgreSQL, MySQL)",
+        "Validation and error handling for all inputs",
+        "Modular architecture for scalability"
+      ],
+      keywords: [
+        "Java", "Spring Boot", "Thymeleaf", "REST API", "Backend Development", "Database Integration"
+      ],
+      image: Libary_intro
+    },
+    {
+      name: "DT Academy Intra",
+      text: "An internal web system for students and teachers with role-based features.",
+      longText: "DT Academy Intra is an internal portal built for student and teacher use. It allows students to clock in/out, manage personal projects, and receive news updates. Teachers can monitor activity and manage content. The project used a Kotlin backend and React frontend, with communication via REST APIs. Led as a full project lead.",
+      features: [
+        "Role-based access for students and teachers",
+        "Daily clock-in/out system",
+        "Personal project submissions",
+        "Newsfeed for updates and announcements",
+        "RESTful API communication between frontend and backend"
+      ],
+      keywords: [
+        "Full-Stack Development", "Kotlin", "React", "REST API", "Project Leadership", "Web App"
+      ],
+      image: null
+    },
+    {
+      name: "Python Binary Calculator",
+      text: "A binary calculator for performing basic arithmetic operations in Python.",
+      longText: "This Python-based binary calculator allows users to input two binary numbers and perform addition, subtraction, multiplication, or division. The result is returned as a binary string. The project reinforces bitwise operation understanding and binary number handling in Python.",
+      features: [
+        "Supports addition, subtraction, multiplication, and division",
+        "Accepts binary input and returns binary output",
+        "Validates user input for binary format",
+        "Command-line based interface"
+      ],
+      keywords: [
+        "CLI", "Python", "Bitwise Operations", "Algorithms"
+      ],
+      image: null
     }
-  ];
+  ]
 
-  const allKeywords = Array.from(new Set(projects.flatMap(p => p.keywords)));
+  const allKeywords = Array.from(
+    new Set(projects.flatMap(p => p.keywords))
+  ).sort();
 
   const scrollTo = (ref) => ref.current.scrollIntoView({ behavior: 'smooth' });
 
