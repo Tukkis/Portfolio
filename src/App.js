@@ -7,9 +7,11 @@ import ContactSection from './components/ContactSection';
 import './App.css';
 
 import CLI_intro from './images/CLI_intro.png';
+import DTIntra_intro from './images/DTIntra_intropng.png';
 import Helip_intro from './images/Helip_intro.png';
 import Libary_intro from './images/Library_intro.png';
 import NutriTracker_intro from './images/NutriTracker_intro.png';
+import PyCalc_intro from './images/PyCalc_intro.png';
 
 const App = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -115,7 +117,7 @@ const App = () => {
       keywords: [
         "Full-Stack Development", "Kotlin", "React", "REST API", "Project Leadership", "Web App"
       ],
-      image: null
+      image: DTIntra_intro
     },
     {
       name: "Python Binary Calculator",
@@ -130,7 +132,7 @@ const App = () => {
       keywords: [
         "CLI", "Python", "Bitwise Operations", "Algorithms"
       ],
-      image: null
+      image: PyCalc_intro
     }
   ]
 

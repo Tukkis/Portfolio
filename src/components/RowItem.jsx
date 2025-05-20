@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import './RowItem.css';
 
 const RowItem = ({ index, imageSrc, title, shortDescription, longDescription, features, keywords }) => {
@@ -7,7 +8,6 @@ const RowItem = ({ index, imageSrc, title, shortDescription, longDescription, fe
   const [opacity, setOpacity] = useState(1);
   const itemRef = useRef(null);
 
-  // Combine inView and custom ref
   useEffect(() => {
     const handleScroll = () => {
       if (!itemRef.current) return;
@@ -16,7 +16,6 @@ const RowItem = ({ index, imageSrc, title, shortDescription, longDescription, fe
       const windowHeight = window.innerHeight;
       const centerY = windowHeight / 2;
       const rowY = rect.top + rect.height / 2;
-
       const distanceFromCenter = Math.abs(centerY - rowY);
 
       if (distanceFromCenter > windowHeight * 0.27) {
@@ -26,60 +25,102 @@ const RowItem = ({ index, imageSrc, title, shortDescription, longDescription, fe
       }
     };
 
-    handleScroll(); // Run once on mount
+    handleScroll(); 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <>
-      <div
-        ref={(el) => {
-          itemRef.current = el; 
-        }}
-        className={`row-item ${isOpen ? 'expanded-row' : ''}`}
-        style={{
-          flexDirection: isEven ? 'row' : 'row-reverse',
-          opacity,
-          transition: 'opacity 0.3s ease, height 0.4s ease',
-        }}
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <div className="image-wrapper">
-          <div
-            className="slanted-overlay"
-            style={{
-              clipPath: isEven
-                ? 'polygon(0 0, 100% 0, 75% 100%, 0% 100%)'
-                : 'polygon(25% 0, 100% 0, 100% 100%, 0% 100%)',
-            }}
-          >
-            <img src={imageSrc} alt="Row" className="main-image" />
-          </div>
-        </div>
-        <div className="text-content">
-          <h3>{title}</h3>
-          <p>{isOpen ? longDescription : shortDescription}</p>
-          {isOpen && features?.length > 0 && (
-            <ul className="feature-list">
-              {features.map((feature, idx) => (
-                <li key={idx}>• {feature}</li>
-              ))}
-            </ul>
-          )}
-          {isOpen && keywords?.length > 0 && (
-            <div className="tech-stack">
-              <h4>Keywords:</h4>
-              <div className="tech-badges">
-                {keywords.map((keyword, idx) => (
-                  <span key={idx} className="tech-badge">{keyword}</span>
-                ))}
-              </div>
-            </div>
-          )}
+    <div
+      ref={itemRef}
+      className={`row-item ${isOpen ? 'expanded-row' : ''}`}
+      style={{
+        flexDirection: isEven ? 'row' : 'row-reverse',
+        opacity,
+        transition: 'opacity 0.3s ease',
+      }}
+      onClick={() => setIsOpen(!isOpen)}
+    >
+      <div className="image-wrapper">
+        <div
+          className="slanted-overlay"
+          style={{
+            clipPath: isEven
+              ? 'polygon(0 0, 100% 0, 75% 100%, 0% 100%)'
+              : 'polygon(25% 0, 100% 0, 100% 100%, 0% 100%)',
+          }}
+        >
+          <img src={imageSrc} alt="Row" className="main-image" />
         </div>
       </div>
-    </>
+
+      <div className="text-content">
+        <h3 className="title">{title}</h3>
+        <p>{shortDescription}</p>
+
+        <AnimatePresence initial={false}>
+          {isOpen && (
+            <motion.div
+              key="expanded"
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ opacity: 0, transition: { duration: 0 } }} 
+              transition={{ duration: 0.4 }}
+              className="expandable-content"
+            >
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10, transition: { duration: 0 } }}
+                transition={{
+                  delay: 0.2,
+                  duration: 0.3,
+                }}
+              >
+                {longDescription}
+              </motion.p>
+
+              {features?.length > 0 && (
+                <motion.ul
+                  className="feature-list"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10, transition: { duration: 0 } }} 
+                  transition={{
+                    delay: 0.35,
+                    duration: 0.3,
+                  }}
+                >
+                  {features.map((feature, idx) => (
+                    <li key={idx}>• {feature}</li>
+                  ))}
+                </motion.ul>
+              )}
+
+              {keywords?.length > 0 && (
+                <motion.div
+                  className="tech-stack"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10, transition: { duration: 0 } }}
+                  transition={{
+                    delay: 0.5,
+                    duration: 0.3,
+                  }}
+                >
+                  <h4>Keywords:</h4>
+                  <div className="tech-badges">
+                    {keywords.map((keyword, idx) => (
+                      <span key={idx} className="tech-badge">{keyword}</span>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </div>
   );
 };
 
