@@ -1,22 +1,23 @@
 {
   "files": {
     "main.css": "/Portfolio/static/css/main.0fa52642.css",
-    "main.js": "/Portfolio/static/js/main.2cc591ca.js",
+    "main.js": "/Portfolio/static/js/main.065068fd.js",
     "static/js/453.af72e82d.chunk.js": "/Portfolio/static/js/453.af72e82d.chunk.js",
     "static/media/Helip_intro.png": "/Portfolio/static/media/Helip_intro.5c634124891c86ffa737.png",
     "static/media/PyCalc_intro.png": "/Portfolio/static/media/PyCalc_intro.34df1bcd088f6c550b19.png",
     "static/media/NutriTracker_intro.png": "/Portfolio/static/media/NutriTracker_intro.ec8fa379f1288d4b2416.png",
+    "static/media/SmartApp_intro.png": "/Portfolio/static/media/SmartApp_intro.dafb65ccd8573dd323f9.png",
     "static/media/CLI_intro.png": "/Portfolio/static/media/CLI_intro.33134d03f5668a0208b7.png",
     "static/media/Library_intro.png": "/Portfolio/static/media/Library_intro.5157bec5e5f0284654ff.png",
     "static/media/CV_IMG.jpg": "/Portfolio/static/media/CV_IMG.5ee5280a28a716aa5481.jpg",
     "static/media/DTIntra_intropng.png": "/Portfolio/static/media/DTIntra_intropng.d4a169dbdffa987e5d28.png",
     "index.html": "/Portfolio/index.html",
     "main.0fa52642.css.map": "/Portfolio/static/css/main.0fa52642.css.map",
-    "main.2cc591ca.js.map": "/Portfolio/static/js/main.2cc591ca.js.map",
+    "main.065068fd.js.map": "/Portfolio/static/js/main.065068fd.js.map",
     "453.af72e82d.chunk.js.map": "/Portfolio/static/js/453.af72e82d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0fa52642.css",
-    "static/js/main.2cc591ca.js"
+    "static/js/main.065068fd.js"
   ]
 }
