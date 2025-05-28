@@ -12,6 +12,7 @@ import Helip_intro from './images/Helip_intro.png';
 import Libary_intro from './images/Library_intro.png';
 import NutriTracker_intro from './images/NutriTracker_intro.png';
 import PyCalc_intro from './images/PyCalc_intro.png';
+import SmartApp_intro from './images/SmartApp_intro.png';
 
 const App = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -133,7 +134,23 @@ const App = () => {
         "CLI", "Python", "Bitwise Operations", "Algorithms"
       ],
       image: PyCalc_intro
-    }
+    },
+    {
+        name: "SmartAppDashboard",
+        text: "A React-based content management system for a mobile game.",
+        longText: "SmartAppDashboard is a web-based content management system designed for managing game content efficiently. Built with React and Firebase, the app is optimized for mobile responsiveness and minimal Firestore queries. It includes intuitive UI components, interactive charts, and dynamic tables for streamlined content editing and tracking.",
+        features: [
+          "Firebase backend with optimized querying",
+          "Responsive design for mobile usability",
+          "Charts and tables for visualizing game data",
+          "UI libraries for consistent and efficient layout",
+          "Support for dynamic content updates"
+        ],
+        keywords: [
+          "React", "Firebase", "CMS", "Web App", "Mobile Responsive", "UI Libraries", "Data Visualization"
+        ],
+        image: SmartApp_intro
+      }
   ]
 
   const allKeywords = Array.from(
