@@ -6,8 +6,7 @@ const HomeSection = React.forwardRef((props, ref) => (
     <div className="home-content">
       <h1>Hi, I'm Tuukka Heinonen</h1>
       <p>
-        Full-stack developer specialized in React and databases. Passionate about problem-solving,
-        mentoring, and continuous learning.
+        I’m a full-stack developer who’s all about learning and building. I’ve always been drawn to the creative and logical side of coding. I love how there’s always something new to figure out in development, and that’s what keeps me motivated. Outside of coding, I love gaming, working out, or just finding new things to dive into.
       </p>
       <img src={CV_IMG} alt="Profile pic" />
     </div>
