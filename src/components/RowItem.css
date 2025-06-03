@@ -134,7 +134,7 @@ h3 {
 
 .link-button.disabled {
   background-color: #6b7280; /* gray-500 */
-  cursor: not-allowed;
+  cursor: default;
 }
 
 .unavailable-overlay {

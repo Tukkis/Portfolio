@@ -37,6 +37,8 @@ const App = () => {
       keywords: [
         "React Native", "Mobile Development", "Firebase", "CI/CD", "Automated Testing", "Algorithms"
       ],
+      githubLink: "https://github.com/Tukkis/NutriTracker",
+      demoLink: null,
       image: NutriTracker_intro
     },
     {
@@ -52,6 +54,8 @@ const App = () => {
       keywords: [
         "React Native", "Mobile Development", "Firebase", "Geolocation", "API Integration"  
       ],
+      githubLink: "https://github.com/kridesav/Helip",
+      demoLink: null,
       image: Helip_intro
     },
     {
@@ -68,6 +72,8 @@ const App = () => {
       keywords: [
         "CLI", "DevOps", "MLOps", "CI/CD", "GitHub Actions", "Python", "Shell Scripting", "Automation", "Linux"
       ],
+      githubLink: "https://github.com/OSS-MLOPS-PLATFORM/oss-mlops-platform",
+      demoLink: null,
       image: CLI_intro
     },
     {
@@ -84,6 +90,8 @@ const App = () => {
       keywords: [
         "C++", "CMS", "Backend Development", "REST API", "Database Integration", "System Design", "Performance Optimization"
       ],
+      githubLink: null,
+      demoLink: null,
       image: null
     },
     {
@@ -102,6 +110,8 @@ const App = () => {
       keywords: [
         "Java", "Spring Boot", "Thymeleaf", "REST API", "Backend Development", "Database Integration"
       ],
+      githubLink: "https://github.com/Tukkis/LibraryApp",
+      demoLink: null,
       image: Libary_intro
     },
     {
@@ -118,6 +128,8 @@ const App = () => {
       keywords: [
         "Full-Stack Development", "Kotlin", "React", "REST API", "Project Leadership", "Web App"
       ],
+      githubLink: null,
+      demoLink: null,
       image: DTIntra_intro
     },
     {
@@ -133,6 +145,8 @@ const App = () => {
       keywords: [
         "CLI", "Python", "Bitwise Operations", "Algorithms"
       ],
+      githubLink: "https://github.com/Tukkis/PythonBinaryCalculator",
+      demoLink: null,
       image: PyCalc_intro
     },
     {
@@ -149,6 +163,8 @@ const App = () => {
         keywords: [
           "React", "Firebase", "CMS", "Web App", "Mobile Responsive", "UI Libraries", "Data Visualization"
         ],
+        githubLink: null,
+        demoLink: null,
         image: SmartApp_intro
       }
   ]

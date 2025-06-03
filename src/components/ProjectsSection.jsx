@@ -29,6 +29,8 @@ const ProjectsSection = ({ projects, allKeywords, activeFilters, setActiveFilter
             longDescription={project.longText}
             features={project.features}
             keywords={project.keywords}
+            githubLink={project.githubLink}
+            demoLink={project.demoLink}
           />
         ))}
       </div>
