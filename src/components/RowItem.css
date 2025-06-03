@@ -99,6 +99,60 @@ h3 {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
+.link-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.link-button {
+  position: relative;
+  background-color: #1f2937;
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  user-select: none;
+  transition: background-color 0.3s ease;
+  overflow: hidden;
+}
+
+.link-button.demo {
+  background-color: #2563eb;
+}
+
+.link-button:hover:not(.disabled) {
+  background-color: #111827;
+}
+
+.link-button.demo:hover:not(.disabled) {
+  background-color: #1d4ed8;
+}
+
+.link-button.disabled {
+  background-color: #6b7280; /* gray-500 */
+  cursor: not-allowed;
+}
+
+.unavailable-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-20deg);
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  padding: 0.3rem 1rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  pointer-events: none;
+  white-space: nowrap;
+  border-radius: 4px;
+  z-index: 1;
+}
+
 @media (max-width: 768px) {
   .row-item {
     flex-direction: column !important;
@@ -126,3 +180,4 @@ h3 {
     clip-path: none !important; 
   }
 }
+
